@@ -14,11 +14,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: ElevatedButton(
-        onPressed: () async =>
-            await Navigator.of(context).pushNamed(randomRouteName),
-        child: const Text('Open random page'),
-      )),
+          child: Row(children: [
+        ElevatedButton(
+          onPressed: () async =>
+              await Navigator.of(context).pushNamed(randomRouteName),
+          child: const Text('Open random page'),
+        ),
+        ElevatedButton(
+            onPressed: () async =>
+                await Navigator.of(context).pushNamed(todoRouteName),
+            child: const Text('Open Todo List'))
+      ])),
     );
   }
 }
